@@ -1,7 +1,10 @@
 # Miscellaneous
 *.class
+*.db
 *.log
 *.pyc
+*.sqlite
+*.sqlite-*
 *.swp
 .DS_Store
 .atom/
@@ -11,6 +14,13 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!*.env.example
+supabase/scripts/.env
 
 # IntelliJ related
 *.iml
@@ -32,6 +42,12 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+node_modules/
+.next/
+out/
+web/.next/
+web/node_modules/
+web/out/
 
 # Symbolication related
 app.*.symbols
