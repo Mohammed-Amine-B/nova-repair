@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Repair Details - REP-0042 | Nova Repair</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f9f9ff",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-primary": "#b4c5ff",
+                    "primary-container": "#2563eb",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#cfdaf2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "secondary": "#505f76",
+                    "secondary-container": "#d0e1fb",
+                    "on-surface": "#111c2d",
+                    "primary": "#004ac6",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#dae2fd",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9ff",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#263143",
+                    "on-primary-container": "#eeefff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-variant": "#d8e3fb",
+                    "surface-container-highest": "#d8e3fb",
+                    "surface-container-high": "#dee8ff",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "tertiary-container": "#656d84",
+                    "outline": "#737686",
+                    "on-background": "#111c2d",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c3c6d7",
+                    "secondary-fixed": "#d3e4fe",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-tertiary-container": "#eef0ff",
+                    "surface-tint": "#0053db",
+                    "on-secondary-container": "#54647a",
+                    "tertiary": "#4d556b",
+                    "surface-container": "#e7eeff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-primary-fixed": "#00174b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "xl": "32px",
+                    "sidebar_width": "240px",
+                    "sidebar_collapsed": "64px",
+                    "gutter": "20px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "xs": "4px",
+                    "container_max": "1440px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "headline-xl": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f8fafc; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .timeline-line::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: #e2e8f0; }
+        .active-nav-indicator { border-left: 3px solid #004ac6; background: #eff6ff; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between py-lg z-50">
+<div>
+<div class="px-md mb-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Nova Repair</h1>
+<p class="font-label-md text-label-md text-on-surface-variant opacity-70">Management System</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md bg-secondary-container text-on-secondary-container border-l-4 border-primary px-md py-sm" href="#">
+<span class="material-symbols-outlined">build</span>
+<span class="font-body-md text-body-md">Repairs</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+</div>
+<div class="px-md border-t border-outline-variant pt-lg">
+<div class="flex items-center gap-md text-on-surface-variant px-md py-sm"><span class="material-symbols-outlined">storefront</span><div><p class="font-body-md text-body-md">TechFix Repair</p><p class="text-label-sm opacity-70">Repair Center</p></div></div>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="fixed top-0 left-[240px] right-0 h-16 bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center px-lg z-40"></header>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] pt-16 min-h-screen">
+<div class="p-lg max-w-7xl mx-auto space-y-lg">
+<!-- Page Header Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<a class="flex items-center gap-xs text-primary font-label-md text-label-md hover:underline mb-xs" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                        Back to Repairs
+                    </a>
+<div class="flex items-center gap-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">REP-0042</h2>
+<span class="bg-[#EFF6FF] text-[#2563EB] px-sm py-1 rounded-full text-label-sm font-label-sm border border-[#2563EB]/20">Repairing</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">HP EliteBook 840</p>
+</div>
+<div class="flex flex-wrap gap-sm">
+<button class="flex items-center gap-sm px-md py-sm border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">
+                        Edit Repair
+                    </button>
+<button class="flex items-center gap-sm px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+                        Change Status
+                    </button>
+<button class="flex items-center gap-sm px-lg py-sm bg-primary text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                        Print
+                    </button>
+</div>
+</div>
+<!-- Two Column Grid -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Left Column (Main Info) -->
+<div class="col-span-12 lg:col-span-8 space-y-lg">
+<!-- Device Information Card -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl"><h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Device Information</h3><div class="grid grid-cols-3 gap-lg"><div><label class="block text-label-sm font-label-sm text-on-surface-variant mb-xs">Device Type</label><p class="font-body-md text-body-md">Laptop</p></div><div><label class="block text-label-sm font-label-sm text-on-surface-variant mb-xs">Brand</label><p class="font-body-md text-body-md">HP</p></div><div><label class="block text-label-sm font-label-sm text-on-surface-variant mb-xs">Model</label><p class="font-body-md text-body-md">EliteBook 840</p></div></div></section>
+<!-- Problem Description -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl"><h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Reported Problem</h3><p class="font-body-md text-body-md text-on-surface">The laptop does not power on. The customer reports that it stopped working after suddenly shutting down during use.</p></section>
+<!-- Notes Section -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl"><h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Notes</h3><div class="space-y-md"><div><div class="flex items-center gap-xs mb-xs"><span class="font-label-sm font-bold text-on-surface">Internal Notes</span><span class="text-label-sm text-on-surface-variant opacity-70">(Internal only)</span></div><p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-sm rounded">Power supply section requires further testing. No visible liquid damage.</p></div><div><div class="flex items-center gap-xs mb-xs"><span class="font-label-sm font-bold text-on-surface">Customer Message</span></div><p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-low p-sm rounded">The device is currently being repaired. We will update the status when testing is complete</p><p class="text-label-sm text-on-surface-variant mt-xs opacity-70">May later be shown to the customer in repair tracking</p></div></div></section>
+<!-- Repair Timeline -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-xl">Repair Timeline</h3>
+<div class="relative timeline-line space-y-xl pl-10">
+<!-- Event 4 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center border-4 border-surface-container-lowest z-10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">sms</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Message Updated</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Today, 16:40</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 bg-surface-container-highest text-primary rounded-full w-8 h-8 flex items-center justify-center border-4 border-surface-container-lowest z-10">
+<span class="material-symbols-outlined text-[16px]">build</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Repairing</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">04 Jul 2026, 14:15</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 bg-surface-container-highest text-on-surface-variant rounded-full w-8 h-8 flex items-center justify-center border-4 border-surface-container-lowest z-10">
+<span class="material-symbols-outlined text-[16px]">search</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Diagnosing</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">04 Jul 2026, 11:00</p>
+</div>
+</div>
+<!-- Event 1 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 bg-surface-container-highest text-on-surface-variant rounded-full w-8 h-8 flex items-center justify-center border-4 border-surface-container-lowest z-10">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Received</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">04 Jul 2026, 10:30</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Sidebar Summary) -->
+<div class="col-span-12 lg:col-span-4 space-y-lg">
+<!-- Repair Summary -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Summary</h3>
+<div class="space-y-sm">
+<div class="flex justify-between py-xs border-b border-surface-container-low">
+<span class="text-body-sm text-on-surface-variant">Code</span>
+<span class="text-body-sm font-semibold">REP-0042</span>
+</div>
+<div class="flex justify-between py-xs border-b border-surface-container-low">
+<span class="text-body-sm text-on-surface-variant">Status</span>
+<span class="text-body-sm font-semibold text-primary">Repairing</span>
+</div>
+<div class="flex justify-between py-xs border-b border-surface-container-low">
+<span class="text-body-sm text-on-surface-variant">Received</span>
+<span class="text-body-sm">04 Jul 2026, 10:30</span>
+</div>
+<div class="flex justify-between py-xs">
+<span class="text-body-sm text-on-surface-variant">Last Updated</span>
+<span class="text-body-sm">Today, 16:40</span>
+</div>
+</div>
+</section>
+<!-- Customer Info -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl"><h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Customer</h3><div class="space-y-sm"><div><label class="block text-label-sm font-label-sm text-on-surface-variant mb-xs">Customer Name</label><p class="font-body-md text-body-md font-semibold">Ahmed Benali</p></div><div><label class="block text-label-sm font-label-sm text-on-surface-variant mb-xs">Phone Number</label><p class="font-body-md text-body-md">0555 12 34 56</p></div></div></section>
+<!-- Price & Approval -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl"><h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Price &amp; Approval</h3><div class="space-y-md"><div><label class="block text-label-sm font-label-sm text-on-surface-variant mb-xs">Proposed Repair Price</label><p class="font-headline-md text-headline-md font-extrabold text-on-surface">6,500 DA</p></div><div class="flex items-center justify-between"><span class="text-body-sm text-on-surface-variant">Customer Decision</span><span class="bg-[#DCFCE7] text-[#166534] px-sm py-1 rounded-full text-label-sm font-label-sm border border-[#166534]/20">Approved</span></div></div></section>
+<!-- Technical Detail Card (Compact) -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl"><h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Received Accessories</h3><p class="font-body-sm text-body-sm">Charger, laptop bag</p></section><section class="bg-surface-container-low border border-outline-variant p-md rounded-xl"><div class="flex items-center justify-between mb-xs"><div class="flex items-center gap-sm"><span class="material-symbols-outlined text-on-surface-variant">lock</span><span class="font-label-md text-label-md text-on-surface-variant uppercase">Device Access</span></div><span class="font-mono bg-white px-md py-xs rounded border border-outline-variant text-on-surface font-bold">1234</span></div><p class="text-label-sm text-on-surface-variant opacity-70">Internal only — not shown on printed tickets</p></section>
+<!-- Warranty Information -->
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md">Warranty</h3>
+<div class="space-y-md">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<p class="text-body-sm">No previous repair linked</p>
+</div>
+<button class="w-full py-sm bg-secondary-container text-on-secondary-container text-label-md font-label-md rounded-lg hover:opacity-90 transition-all">Create Warranty Return</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Visual Polish: Light Ambient Background -->
+<script>
+        // Simple micro-interaction for status badge hover
+        const statusBadge = document.querySelector('.status-badge');
+        if (statusBadge) {
+            statusBadge.addEventListener('mouseenter', () => {
+                statusBadge.style.transform = 'scale(1.05)';
+            });
+            statusBadge.addEventListener('mouseleave', () => {
+                statusBadge.style.transform = 'scale(1)';
+            });
+        }
+    </script>
+</body></html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Settings - Nova Repair</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface": "#f9f9ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-surface": "#111c2d",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-container": "#54647a",
+                    "on-primary-fixed": "#00174b",
+                    "surface-tint": "#0053db",
+                    "primary-fixed": "#dbe1ff",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9ff",
+                    "inverse-surface": "#263143",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#434655",
+                    "outline-variant": "#c3c6d7",
+                    "surface-dim": "#cfdaf2",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-primary-container": "#eeefff",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary": "#004ac6",
+                    "surface-container-high": "#dee8ff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-background": "#111c2d",
+                    "secondary": "#505f76",
+                    "on-secondary-fixed": "#0b1c30",
+                    "tertiary-container": "#656d84",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-tertiary-container": "#eef0ff",
+                    "surface-bright": "#f9f9ff",
+                    "surface-variant": "#d8e3fb",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "inverse-primary": "#b4c5ff",
+                    "outline": "#737686",
+                    "on-tertiary-fixed": "#131b2e",
+                    "surface-container": "#e7eeff",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "secondary-container": "#d0e1fb",
+                    "on-error": "#ffffff",
+                    "tertiary": "#4d556b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar_width": "240px",
+                    "xs": "4px",
+                    "container_max": "1440px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "base": "4px",
+                    "sidebar_collapsed": "64px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-xl": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f8fafc; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active { border-left-width: 3px; border-left-color: #004ac6; background-color: #eff6ff; }
+        input:focus, select:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Navigation -->
+<aside class="flex flex-col h-full w-[240px] border-r border-outline-variant dark:border-outline bg-surface dark:bg-surface-dim fixed left-0 top-0 z-50">
+<div class="px-md py-lg">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">Nova Repair</h1>
+<p class="font-label-sm text-label-sm text-secondary opacity-70 uppercase tracking-wider">Management System</p>
+</div>
+<nav class="flex-1 px-sm space-y-1">
+<!-- Dashboard Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Repairs Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+<span class="font-body-md text-body-md">Repairs</span>
+</a>
+<!-- Settings Tab (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed border-l-4 border-primary dark:border-primary-fixed-dim active:scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="p-md mt-auto"><div class="flex items-center gap-3 p-sm rounded-lg hover:bg-surface-container transition-colors cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-sm">store</span></div><div class="overflow-hidden"><p class="font-label-md text-label-md truncate">TechFix Repair</p><p class="font-label-sm text-label-sm text-secondary truncate">Repair Center</p></div></div></div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[240px] min-h-screen">
+<!-- Top App Bar (Simplified for Settings) -->
+<header class="h-16 flex items-center px-lg bg-surface border-b border-outline-variant sticky top-0 z-40"><div class="flex flex-col"><h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Settings</h2><p class="font-label-sm text-label-sm text-secondary">Manage shop information and application preferences</p></div></header>
+<!-- Scrollable Content -->
+<div class="p-lg">
+<div class="max-w-[960px] mx-auto">
+<!-- Page Header Info -->
+
+<!-- Section 1: Shop Information -->
+<section class="mb-lg">
+<div class="mb-md">
+<h4 class="font-headline-md text-headline-md text-on-surface">Shop Information</h4>
+<p class="font-body-sm text-body-sm text-secondary">Information shown on printed customer tickets</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg grid grid-cols-2 gap-lg">
+<!-- Shop Name -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface">Shop Name</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md" type="text" value="TechFix Repair">
+</div>
+<!-- Shop Subtitle -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface">Shop Subtitle</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md" type="text" value="Repair Center">
+</div>
+<!-- Phone Number -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface">Phone Number</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md" type="text" value="0555 00 11 22">
+</div>
+<!-- Address -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface">Address</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md" type="text" value="Chlef, Algeria">
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Printing Defaults -->
+<section class="mb-lg">
+<div class="mb-md">
+<h4 class="font-headline-md text-headline-md text-on-surface">Printing Defaults</h4>
+<p class="font-body-sm text-body-sm text-secondary">Choose the default printers used for repair documents</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Customer Ticket Printer -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface">Customer Ticket Printer</label>
+<select class="w-full bg-white border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md"><option selected="">Default Printer</option></select>
+<p class="font-label-sm text-label-sm text-secondary">Used for customer repair tickets</p>
+</div>
+<!-- Device Label Printer -->
+<div class="space-y-base">
+<label class="font-label-md text-label-md text-on-surface">Device Label Printer</label>
+<select class="w-full bg-white border border-outline-variant rounded-lg px-md py-sm font-body-md text-body-md"><option selected="">Default Printer</option></select>
+<p class="font-label-sm text-label-sm text-secondary">Used for small device labels</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Data -->
+<section class="mb-xl">
+<div class="mb-md">
+<h4 class="font-headline-md text-headline-md text-on-surface">Data</h4>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="backup">backup</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg font-semibold text-on-surface">Backup &amp; Restore</h5>
+<p class="font-body-sm text-body-sm text-secondary">Create backups and restore Nova Repair data</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Footer Actions -->
+<footer class="flex items-center justify-end pt-lg pb-xl gap-md border-t border-outline-variant mt-xl">
+
+<button class="px-xl py-md bg-primary text-on-primary rounded-lg font-label-md text-label-md font-bold shadow-md hover:bg-primary-container active:scale-[0.98] transition-all">
+                        Save Changes
+                    </button>
+</footer>
+</div>
+</div>
+</main>
+<!-- Floating Atmosphere Script (Subtle micro-interactions) -->
+<script>
+        document.querySelectorAll('input, select').forEach(el => {
+            el.addEventListener('change', () => {
+                // Potential to show unsaved changes indicator
+                console.log('Setting changed');
+            });
+        });
+    </script>
+
+
+</body></html>

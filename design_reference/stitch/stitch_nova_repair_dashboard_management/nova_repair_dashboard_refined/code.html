@@ -1,0 +1,340 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nova Repair Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c3c6d7",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#d0e1fb",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-dim": "#cfdaf2",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#eef0ff",
+                    "surface-container-low": "#f0f3ff",
+                    "on-background": "#111c2d",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "surface-container": "#e7eeff",
+                    "on-secondary-container": "#54647a",
+                    "on-secondary-fixed": "#0b1c30",
+                    "primary": "#004ac6",
+                    "on-surface": "#111c2d",
+                    "surface-tint": "#0053db",
+                    "surface": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary": "#4d556b",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-primary-container": "#eeefff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline": "#737686",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#131b2e",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-variant": "#d8e3fb",
+                    "on-surface-variant": "#434655",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#263143",
+                    "secondary": "#505f76",
+                    "surface-container-highest": "#d8e3fb",
+                    "tertiary-container": "#656d84",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "sm": "8px",
+                    "sidebar_collapsed": "64px",
+                    "gutter": "20px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "container_max": "1440px",
+                    "sidebar_width": "240px",
+                    "md": "16px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-xl": ["Manrope"],
+                    "label-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f9f9ff;
+        }
+        .active-nav-indicator {
+            position: absolute;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: #004ac6;
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Application Shell: Fixed Sidebar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between py-lg z-50">
+<div>
+<!-- Header Section -->
+<div class="px-md mb-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Nova Repair</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-70">Management System</p>
+</div>
+<!-- Navigation Links -->
+<nav class="space-y-base">
+<!-- Dashboard (Active) -->
+<div class="relative flex items-center gap-md bg-secondary-container text-on-secondary-container border-l-4 border-primary px-md py-sm cursor-pointer active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md font-semibold">Dashboard</span>
+</div>
+<!-- Repairs -->
+<div class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="build">build</span>
+<span class="font-body-md text-body-md">Repairs</span>
+</div>
+<!-- Settings -->
+<div class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</div>
+</nav>
+</div>
+<!-- Footer Section -->
+<div class="px-md border-t border-outline-variant pt-lg"><div class="flex items-center gap-sm p-sm"><span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="storefront">storefront</span><div><p class="font-label-md text-label-md text-on-surface font-bold leading-none">TechFix Repair</p><p class="font-label-sm text-label-sm text-on-surface-variant">Repair Center</p></div></div></div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[240px] min-h-screen">
+<!-- Top App Bar -->
+<header class="h-16 sticky top-0 bg-surface border-b border-outline-variant flex justify-between items-center px-lg z-40">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Dashboard</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Overview of your repair shop activity</p>
+</div>
+<div class="flex items-center gap-md"><button class="flex items-center gap-sm bg-primary text-on-primary px-lg py-sm rounded transition-all active:scale-95 hover:brightness-110 shadow-sm"><span class="material-symbols-outlined text-[18px]" data-icon="add">add</span><span class="font-label-md text-label-md uppercase tracking-wider">New Repair</span></button></div>
+</header>
+<div class="p-lg max-w-[container_max] mx-auto space-y-xl">
+<!-- Summary Section: Four Compact Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-lg">
+<!-- Active Repairs -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex items-center gap-md hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="home_repair_service">home_repair_service</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Active Repairs</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">12</h3>
+</div>
+</div>
+<!-- Waiting for Approval -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex items-center gap-md hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Waiting for Approval</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">3</h3>
+</div>
+</div>
+<!-- Waiting for Part -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex items-center gap-md hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="parts_unavailable">event_available</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Waiting for Part</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">4</h3>
+</div>
+</div>
+<!-- Ready for Pickup -->
+<div class="bg-surface-container-lowest border border-outline-variant p-md rounded-xl flex items-center gap-md hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-green-700">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ready for Pickup</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">6</h3>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-12 gap-lg items-start">
+<!-- Left (Larger): Recent Repairs Table -->
+<div class="col-span-12 xl:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+<h4 class="font-headline-md text-headline-md text-on-surface">Recent Repairs</h4>
+<a class="text-primary font-label-md hover:underline flex items-center gap-xs" href="#">
+                            View all repairs <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant">
+<tr>
+<th class="px-lg py-sm font-label-sm uppercase tracking-wider">Repair Code</th>
+<th class="px-lg py-sm font-label-sm uppercase tracking-wider">Device</th>
+<th class="px-lg py-sm font-label-sm uppercase tracking-wider">Customer</th>
+<th class="px-lg py-sm font-label-sm uppercase tracking-wider">Status</th>
+<th class="px-lg py-sm font-label-sm uppercase tracking-wider">Date</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md font-body-md text-primary font-semibold">REP-0042</td>
+<td class="px-lg py-md font-body-md text-on-surface">HP EliteBook 840</td>
+<td class="px-lg py-md font-body-md text-on-surface">Ahmed Benali</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full text-[11px] font-bold bg-blue-100 text-blue-800 uppercase">Repairing</span>
+</td>
+<td class="px-lg py-md font-body-md text-on-surface-variant">Today</td>
+<td class="px-lg py-md text-right"><span class="material-symbols-outlined text-on-surface-variant opacity-50 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span></td></tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md font-body-md text-primary font-semibold">REP-0041</td>
+<td class="px-lg py-md font-body-md text-on-surface">Samsung Galaxy S23</td>
+<td class="px-lg py-md font-body-md text-on-surface">Sarah K.</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full text-[11px] font-bold bg-orange-100 text-orange-800 uppercase">Waiting for Part</span>
+</td>
+<td class="px-lg py-md font-body-md text-on-surface-variant">Yesterday</td>
+<td class="px-lg py-md text-right"><span class="material-symbols-outlined text-on-surface-variant opacity-50 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span></td></tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md font-body-md text-primary font-semibold">REP-0040</td>
+<td class="px-lg py-md font-body-md text-on-surface">Lenovo ThinkPad</td>
+<td class="px-lg py-md font-body-md text-on-surface">Mohamed Amine</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 uppercase">Ready for Pickup</span>
+</td>
+<td class="px-lg py-md font-body-md text-on-surface-variant">2 days ago</td>
+<td class="px-lg py-md text-right"><span class="material-symbols-outlined text-on-surface-variant opacity-50 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span></td></tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md font-body-md text-primary font-semibold">REP-0039</td>
+<td class="px-lg py-md font-body-md text-on-surface">iPhone 14</td>
+<td class="px-lg py-md font-body-md text-on-surface">Yacine B.</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-sm py-xs rounded-full text-[11px] font-bold bg-surface-container-highest text-on-surface-variant uppercase">Diagnosing</span>
+</td>
+<td class="px-lg py-md font-body-md text-on-surface-variant">3 days ago</td>
+<td class="px-lg py-md text-right"><span class="material-symbols-outlined text-on-surface-variant opacity-50 group-hover:opacity-100 transition-opacity" data-icon="chevron_right">chevron_right</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right (Narrower): Needs Attention Panel -->
+<div class="col-span-12 xl:col-span-4 space-y-lg">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex items-center gap-sm mb-lg border-b border-outline-variant pb-md">
+<span class="material-symbols-outlined text-error" data-icon="priority_high">priority_high</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Needs Attention</h4>
+</div>
+<div class="space-y-md">
+<!-- Alert 1 -->
+<div class="flex items-start gap-md p-md bg-error-container/20 border-l-4 border-error rounded-r-lg">
+<span class="material-symbols-outlined text-error mt-xs" data-icon="rate_review">rate_review</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">3 repairs waiting for customer approval</p>
+<button class="mt-xs text-error font-label-sm uppercase hover:underline">Review</button>
+</div>
+</div>
+<!-- Alert 2 -->
+<div class="flex items-start gap-md p-md bg-secondary-container/10 border-l-4 border-secondary rounded-r-lg">
+<span class="material-symbols-outlined text-secondary mt-xs" data-icon="inventory">inventory</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">2 devices ready for pickup for more than 5 days</p>
+<button class="mt-xs text-secondary font-label-sm uppercase hover:underline">Open List</button>
+</div>
+</div>
+<!-- Alert 3 -->
+<div class="flex items-start gap-md p-md bg-on-surface-variant/5 border-l-4 border-outline rounded-r-lg">
+<span class="material-symbols-outlined text-on-surface-variant mt-xs" data-icon="warning">warning</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">1 repair open for more than 14 days</p>
+<button class="mt-xs text-on-surface-variant font-label-sm uppercase hover:underline">View Repairs</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Shop Activity Snapshot (Extra Context) -->
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('nav div').forEach(item => {
+            item.addEventListener('click', () => {
+                // This is a simple visual toggle for demo purposes
+                console.log('Navigated to: ' + item.innerText);
+            });
+        });
+
+        // Add visual feedback to repair status chips on hover
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.querySelector('.material-symbols-outlined')?.classList.add('scale-110');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.querySelector('.material-symbols-outlined')?.classList.remove('scale-110');
+            });
+        });
+    </script>
+</body></html>

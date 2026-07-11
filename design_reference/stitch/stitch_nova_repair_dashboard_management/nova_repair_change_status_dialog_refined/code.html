@@ -1,0 +1,289 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #CBD5E1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "outline": "#737686",
+                        "on-tertiary-fixed": "#131b2e",
+                        "inverse-primary": "#b4c5ff",
+                        "secondary-container": "#d0e1fb",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "surface-container": "#e7eeff",
+                        "tertiary": "#4d556b",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-tertiary-container": "#eef0ff",
+                        "tertiary-container": "#656d84",
+                        "secondary": "#505f76",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-variant": "#d8e3fb",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f9f9ff",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary": "#004ac6",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "surface-dim": "#cfdaf2",
+                        "surface-container-high": "#dee8ff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#111c2d",
+                        "inverse-on-surface": "#ecf1ff",
+                        "surface": "#f9f9ff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#54647a",
+                        "surface-container-low": "#f0f3ff",
+                        "on-surface": "#111c2d",
+                        "surface-tint": "#0053db",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-highest": "#d8e3fb",
+                        "inverse-surface": "#263143",
+                        "primary-fixed": "#dbe1ff",
+                        "error": "#ba1a1a",
+                        "background": "#f9f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "sidebar_collapsed": "64px",
+                        "gutter": "20px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sidebar_width": "240px",
+                        "container_max": "1440px",
+                        "xs": "4px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Background Layer: Repair Details Screen REP-0042 -->
+<div class="fixed inset-0 flex flex-row overflow-hidden grayscale-[0.2] opacity-40 pointer-events-none"><aside class="w-[240px] h-screen bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between py-lg">
+<div>
+<div class="px-md mb-xl">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Nova Repair</h1>
+<p class="font-label-md text-label-md text-on-surface-variant opacity-70">Management System</p>
+</div>
+<nav class="space-y-1">
+<div class="flex items-center gap-md text-on-surface-variant px-md py-sm">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</div>
+<div class="flex items-center gap-md bg-secondary-container text-on-secondary-container border-l-4 border-primary px-md py-sm">
+<span class="material-symbols-outlined">build</span>
+<span class="font-body-md text-body-md">Repairs</span>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant px-md py-sm">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</div>
+</nav>
+</div>
+<div class="px-md border-t border-outline-variant pt-lg">
+<div class="flex items-center gap-md text-on-surface-variant px-md py-sm"><span class="material-symbols-outlined">storefront</span><div><p class="font-body-md text-body-md">TechFix Repair</p><p class="text-label-sm opacity-70">Repair Center</p></div></div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-16 bg-surface-container-lowest border-b border-outline-variant flex items-center px-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface">Repair Details</h1>
+</header>
+<div class="p-lg overflow-auto">
+<div class="max-w-7xl mx-auto space-y-lg">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">REP-0042</h2>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-label-sm font-label-sm border border-primary/20">Repairing</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">HP EliteBook 840</p>
+<div class="grid grid-cols-12 gap-lg">
+<div class="col-span-8 space-y-lg">
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl h-32"></section>
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl h-32"></section>
+</div>
+<div class="col-span-4 space-y-lg">
+<section class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl h-64"></section>
+</div>
+</div>
+</div>
+</div>
+</main></div>
+<!-- Backdrop Overlay -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-40 transition-opacity"></div>
+<!-- Centered Modal Dialog -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-md">
+<div class="bg-surface-container-lowest w-full max-w-[560px] rounded-xl shadow-2xl border border-outline-variant flex flex-col max-h-[921px] animate-in fade-in zoom-in duration-300">
+<!-- Modal Header -->
+<div class="p-lg border-b border-outline-variant flex justify-between items-center bg-surface-container-low/50">
+<div>
+<h2 class="text-headline-md font-bold text-on-surface">Change Repair Status</h2>
+<p class="text-body-sm text-secondary">REP-0042 — HP EliteBook 840</p>
+</div>
+<button aria-label="Close modal" class="p-2 hover:bg-surface-container rounded-full transition-colors text-secondary">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-lg space-y-lg">
+<!-- Current Status Section -->
+<div class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant/30">
+<span class="text-label-md font-bold uppercase text-secondary">Current Status</span>
+<span class="px-3 py-1 bg-primary/10 text-primary font-bold text-label-md rounded-full border border-primary/20 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Repairing
+                    </span>
+</div>
+<!-- Status Selection List -->
+<div>
+<label class="text-label-md font-bold uppercase text-outline mb-sm block">Select New Status</label>
+<div class="space-y-sm"><!-- Received -->
+<div class="group flex items-center gap-md p-md rounded-lg border border-outline-variant hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-surface">Received</h4>
+<p class="text-body-sm text-secondary">Device has been received by the repair shop</p>
+</div>
+</div>
+<!-- Diagnosing -->
+<div class="group flex items-center gap-md p-md rounded-lg border border-outline-variant hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-surface">Diagnosing</h4>
+<p class="text-body-sm text-secondary">Device is being inspected and diagnosed</p>
+</div>
+</div>
+<!-- Waiting for Customer Approval -->
+<div class="group flex items-center gap-md p-md rounded-lg border border-outline-variant hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-surface">Waiting for Customer Approval</h4>
+<p class="text-body-sm text-secondary">Waiting for the customer to approve the proposed price</p>
+</div>
+</div>
+<!-- Waiting for Part -->
+<div class="group flex items-center gap-md p-md rounded-lg border border-outline-variant hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="w-3 h-3 rounded-full bg-orange-400"></div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-surface">Waiting for Part</h4>
+<p class="text-body-sm text-secondary">Repair is paused while waiting for a required part</p>
+</div>
+</div>
+<!-- Repairing (Current) -->
+<div class="flex items-center gap-md p-md rounded-lg border border-outline-variant bg-surface-container-low/50 opacity-60 cursor-not-allowed">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<h4 class="text-body-md font-bold text-on-surface">Repairing</h4>
+<span class="text-[10px] font-bold uppercase text-primary">Current</span>
+</div>
+<p class="text-body-sm text-secondary">Repair work is currently in progress</p>
+</div>
+</div>
+<!-- Ready for Pickup (Selected) -->
+<div class="flex items-center gap-md p-md rounded-lg border-2 border-green-200 bg-green-100/30 relative transition-all">
+<div class="w-6 h-6 bg-green-800 rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-white text-[16px] font-bold">check</span>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-green-800">Ready for Pickup</h4>
+<p class="text-body-sm text-green-800/70">Repair is complete and the device is ready for collection</p>
+</div>
+</div>
+<!-- Delivered -->
+<div class="group flex items-center gap-md p-md rounded-lg border border-outline-variant hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="w-3 h-3 rounded-full bg-outline"></div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-surface">Delivered</h4>
+<p class="text-body-sm text-secondary">Device has been returned to the customer</p>
+</div>
+</div>
+<!-- Cancelled -->
+<div class="group flex items-center gap-md p-md rounded-lg border border-outline-variant hover:bg-surface-container-low cursor-pointer transition-all">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-surface">Cancelled</h4>
+<p class="text-body-sm text-secondary">Repair job has been cancelled</p>
+</div>
+</div></div>
+</div>
+<!-- Customer Message Section -->
+<div class="space-y-sm pt-md">
+<label class="text-label-md font-bold uppercase text-outline block" for="customer-message">Customer Message</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none" id="customer-message" rows="3">Your device is repaired and ready for pickup.</textarea>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">info</span>
+<p class="text-label-sm text-secondary">This may later be shown to the customer in repair tracking</p>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-lg bg-surface-container-low/50 border-t border-outline-variant flex items-center justify-end gap-md">
+<button class="px-lg py-sm text-body-md font-semibold text-secondary hover:bg-surface-container rounded transition-colors active:scale-95">
+                    Cancel
+                </button>
+<button class="px-lg py-sm bg-primary text-white text-body-md font-bold rounded-lg flex items-center gap-sm hover:bg-primary/90 shadow-md active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+                    Update Status
+                </button>
+</div>
+</div>
+</div>
+<!-- Floating Atmosphere Micro-Interaction Script -->
+<script>
+        // Subtle interaction for the status cards
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mousedown', () => {
+                item.classList.add('scale-[0.99]');
+            });
+            item.addEventListener('mouseup', () => {
+                item.classList.remove('scale-[0.99]');
+            });
+        });
+    </script>
+
+
+</body></html>

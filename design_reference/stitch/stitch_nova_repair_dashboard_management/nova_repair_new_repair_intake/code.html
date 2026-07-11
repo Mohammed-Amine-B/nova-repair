@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>New Repair | Nova Repair</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0053db",
+                        "tertiary": "#4d556b",
+                        "surface-bright": "#f9f9ff",
+                        "surface": "#f9f9ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-container": "#eeefff",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737686",
+                        "on-tertiary-fixed": "#131b2e",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-on-surface": "#ecf1ff",
+                        "inverse-surface": "#263143",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434655",
+                        "surface-variant": "#d8e3fb",
+                        "surface-container-highest": "#d8e3fb",
+                        "secondary": "#505f76",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "tertiary-container": "#656d84",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c3c6d7",
+                        "tertiary-fixed": "#dae2fd",
+                        "primary-container": "#2563eb",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#d0e1fb",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-container-high": "#dee8ff",
+                        "surface-dim": "#cfdaf2",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-low": "#f0f3ff",
+                        "on-tertiary-container": "#eef0ff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "background": "#f9f9ff",
+                        "on-secondary-container": "#54647a",
+                        "surface-container": "#e7eeff",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-background": "#111c2d",
+                        "on-surface": "#111c2d",
+                        "primary": "#004ac6",
+                        "on-secondary-fixed": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container_max": "1440px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "sidebar_width": "240px",
+                        "md": "16px",
+                        "sidebar_collapsed": "64px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-xl": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-xl": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+            font-family: 'Manrope', sans-serif;
+            color: #111C2D;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+        .card-surface {
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[240px] bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between py-lg z-50">
+<div>
+<!-- Header/Logo Area -->
+<div class="px-md mb-xl">
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Nova Repair</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Management System</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-xs">
+<a class="flex items-center gap-md text-on-surface-variant hover:bg-surface-container px-md py-sm transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Active Tab: Repairs -->
+<a class="flex items-center gap-md bg-secondary-container text-on-secondary-container border-l-4 border-primary px-md py-sm transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="build" style="font-variation-settings: 'FILL' 1;">build</span>
+<span class="font-body-md text-body-md font-bold">Repairs</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant hover:bg-surface-container px-md py-sm transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Brand Info -->
+<div class="px-md border-t border-outline-variant pt-lg">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md">TechFix Repair</span>
+<span class="text-[10px] text-outline">Repair Center</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[240px] flex-1 flex flex-col">
+<!-- TopAppBar (Simulated header area) -->
+<header class="h-16 sticky top-0 bg-surface border-b border-outline-variant flex justify-between items-center px-lg z-40">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">New Repair</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Register a new device for repair</p>
+</div>
+<!-- Trailing Icons/Actions Suppressed as per prompt -->
+</header>
+<div class="p-lg flex-1 overflow-y-auto custom-scrollbar pb-24">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Left Column -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- Customer Information Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="person">person</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Customer Information</h3>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Customer Name</label>
+<input class="w-full h-10 px-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all" placeholder="Full name" type="text">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Phone Number</label>
+<input class="w-full h-10 px-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all" placeholder="e.g. 0555 12 34 56" type="tel">
+</div>
+</div>
+</section>
+<!-- Device Information Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="devices">devices</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Device Information</h3>
+</div>
+<div class="grid grid-cols-3 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Device Type <span class="text-error">*</span></label>
+<input class="w-full h-10 px-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all" placeholder="e.g. Laptop, Phone, Printer" type="text" required="">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Brand</label>
+<input class="w-full h-10 px-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all" placeholder="e.g. Apple, Samsung" type="text">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Model</label>
+<input class="w-full h-10 px-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all" placeholder="e.g. iPhone 15 Pro" type="text">
+</div>
+</div>
+</section>
+<!-- Reported Problem Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="report_problem">report_problem</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Reported Problem</h3>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Describe the issue reported by the customer <span class="text-error">*</span></label>
+<textarea class="w-full p-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all resize-none" placeholder="Cracked screen, battery drainage, liquid damage..." rows="4"></textarea>
+</div>
+</section>
+<!-- Notes Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="notes">notes</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Notes</h3>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Internal Notes</label>
+<textarea class="w-full p-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all resize-none" placeholder="Private details for technicians only..." rows="2"></textarea>
+</div>
+<div class="flex flex-col gap-xs"><label class="font-label-md text-label-md text-on-surface-variant">Customer Message</label><textarea class="w-full p-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all resize-none" placeholder="e.g. We are waiting for the replacement part" rows="2"></textarea><p class="font-label-sm text-label-sm text-outline">This may later be shown to the customer in repair tracking</p></div>
+</div>
+</section>
+</div>
+<!-- Right Column -->
+<div class="md:col-span-4 flex flex-col gap-lg">
+<!-- Status Note (Contextual Info) -->
+<div class="flex items-center justify-between p-md bg-surface-container rounded-lg border border-outline-variant">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Initial Status:</span>
+<div class="flex items-center gap-xs bg-secondary-container px-sm py-[2px] rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Received</span>
+</div>
+</div>
+<!-- Received Accessories Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="cable">cable</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Received Accessories</h3>
+</div>
+<div class="flex flex-col gap-xs">
+<textarea class="w-full p-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all resize-none" placeholder="e.g. Charger, bag, cable" rows="3"></textarea>
+<p class="font-label-sm text-label-sm text-outline">List any accessories received with the device</p>
+</div>
+</section>
+<!-- Device Access Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="lock_open">lock_open</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Device Access</h3>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">PIN / Password / Access Note</label>
+<input class="w-full h-10 px-sm border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all" placeholder="1234 or Pattern description" type="text">
+<p class="font-label-sm text-label-sm italic text-outline">Internal use only. Keep confidential.</p>
+</div>
+</section>
+<!-- Price Card -->
+<section class="card-surface p-lg rounded-lg">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="payments">payments</span>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Price</h3>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Proposed Repair Price</label>
+<div class="relative">
+<input class="w-full h-10 pl-sm pr-12 border border-outline-variant rounded-lg bg-white focus:border-primary focus:ring-1 focus:ring-primary-fixed outline-none text-body-md transition-all font-bold" placeholder="0" type="number">
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-md text-label-md text-outline">DA</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-sm">Optional — can be added later after diagnosis</p>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Actions Bar -->
+<footer class="fixed bottom-0 left-[240px] right-0 h-20 bg-surface border-t border-outline-variant flex items-center justify-end px-lg gap-md shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40">
+<button class="px-lg h-10 font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors active:scale-95">
+                Cancel
+            </button>
+<button class="px-lg h-10 border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container transition-all active:scale-95">
+                Save Repair
+            </button>
+<button class="px-lg h-10 bg-primary-container text-on-primary-container rounded-lg font-body-md text-body-md font-bold flex items-center gap-sm shadow-sm hover:brightness-110 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="print">print</span>
+                Save &amp; Print
+            </button>
+</footer>
+</main>
+<script>
+        // Simple micro-interaction for form focus
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.closest('section')?.classList.add('shadow-md');
+                element.closest('section')?.classList.add('border-primary-fixed');
+            });
+            element.addEventListener('blur', () => {
+                element.closest('section')?.classList.remove('shadow-md');
+                element.closest('section')?.classList.remove('border-primary-fixed');
+            });
+        });
+    </script>
+
+
+</body></html>
